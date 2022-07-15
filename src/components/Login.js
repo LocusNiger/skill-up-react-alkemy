@@ -1,6 +1,6 @@
 import axios from "axios";
 import sweetAlert from "@sweetalert/with-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 
 function Login() {
   /* hook para redireccionar a otra ruta */
@@ -40,8 +40,10 @@ function Login() {
         navigate("/listado");
       });
   };
+  let token = localStorage.getItem("token");
   return (
     <>
+      {token && <Navigate to="/listado" />}
       <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
         <div className="max-w-lg mx-auto text-center">
           <h1 className="text-2xl font-bold sm:text-3xl">Login</h1>
