@@ -26,8 +26,9 @@ export default function Listado() {
       {!token && <Navigate to="/login" />}
       {/* Si tengo el token entonces renderiza lo siguiente */}
 
+      {/* mapeo el movielist y muestro las películas */}
       {moviesList.map((movie, idx) => {
-        return <Movie />;
+        return <Movie key={idx} title={movie.title} overview={movie.overview} img={movie.poster_path} />;
       })}
     </>
   );
