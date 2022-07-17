@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        killBill: "#f8ba00",
+        midnight: "#121721",
+      },
+    },
   },
   plugins: [require("@tailwindcss/forms")],
 };

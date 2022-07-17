@@ -26,10 +26,20 @@ export default function Listado() {
       {!token && <Navigate to="/login" />}
       {/* Si tengo el token entonces renderiza lo siguiente */}
 
-      {/* mapeo el movielist y muestro las películas */}
-      {moviesList.map((movie, idx) => {
-        return <Movie key={idx} title={movie.title} overview={movie.overview} img={movie.poster_path} />;
-      })}
+      <div className="grid grid-cols-1 gap-6 box-border justify-items-center sm:grid-cols-2 md:grid-cols-4 ">
+        {/* mapeo el movielist y muestro las películas */}
+        {moviesList.map((movie) => {
+          return (
+            <Movie
+              key={movie.id}
+              title={movie.title}
+              img={movie.poster_path}
+              date={movie.release_date}
+              rate={movie.vote_average}
+            />
+          );
+        })}
+      </div>
     </>
   );
 }

@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="text-center">
+    <footer className="text-center bg-midnight">
       <div className="max-w-screen-xl px-4 py-12 mx-auto sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto space-y-6">
           <div className="flex justify-center space-x-6">
@@ -17,7 +17,7 @@ function Footer() {
             </a>
 
             <a
-              className="text-gray-900 hover:text-opacity-75"
+              className="text-white hover:text-opacity-75"
               href="http://github.com/LocusNiger"
               target="_blank"
               rel="noopener noreferrer"
@@ -49,7 +49,7 @@ function Footer() {
             </a>
           </div>
 
-          <nav className="relative flex flex-wrap justify-center gap-8 p-8 text-sm font-bold border-4 border-black rounded-xl">
+          <nav className="relative flex flex-wrap justify-center gap-8 p-8 text-sm font-bold border-2 border-killBill text-killBill rounded-xl">
             <a
               className="hover:opacity-75"
               href="http://linkedin.com/in/ivansanchez-frontend"
@@ -69,7 +69,7 @@ function Footer() {
             </a>
           </nav>
 
-          <p className="text-xs font-medium">2022 Iván Sánchez</p>
+          <p className="text-xs text-killBill font-medium ">2022 Iván Sánchez</p>
         </div>
       </div>
     </footer>
