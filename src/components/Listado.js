@@ -2,6 +2,7 @@ import { Navigate } from "react-router-dom";
 import Movie from "./Movie";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import sweetAlert from "@sweetalert/with-react";
 
 /* Este componente solo debe mostrarse si estas logueado (con un token) */
 export default function Listado() {
@@ -13,10 +14,15 @@ export default function Listado() {
   useEffect(() => {
     const endpoint = "https://api.themoviedb.org/3/trending/movie/week?api_key=9cc2ccd6d9648c49e03bee3c9b88a569";
     /* petición a la API */
-    axios.get(endpoint).then((response) => {
-      /* seteo en el array de películas */
-      setMoviesList(response.data.results);
-    });
+    axios
+      .get(endpoint)
+      .then((response) => {
+        /* seteo en el array de películas */
+        setMoviesList(response.data.results);
+      })
+      .catch((error) => {
+        sweetAlert(<h2>Lo siento, estamos teniendo fallas. Intenta de nuevo más tarde</h2>);
+      });
   }, [setMoviesList]);
 
   console.log(moviesList);
@@ -26,7 +32,7 @@ export default function Listado() {
       {!token && <Navigate to="/login" />}
       {/* Si tengo el token entonces renderiza lo siguiente */}
 
-      <div className="grid grid-cols-1 gap-6 box-border justify-items-center sm:grid-cols-2 md:grid-cols-4 ">
+      <div className="grid grid-cols-1 gap-6 box-border justify-items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
         {/* mapeo el movielist y muestro las películas */}
         {moviesList.map((movie) => {
           return (
