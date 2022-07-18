@@ -7,7 +7,7 @@ import sweetAlert from "@sweetalert/with-react";
 /* Este componente solo debe mostrarse si estas logueado (con un token) */
 export default function Listado() {
   /* Busco si hay un token */
-  let token = localStorage.getItem("token");
+  let token = sessionStorage.getItem("token");
   /* Estado para manejar el array de peliculas. Array vacío */
   const [moviesList, setMoviesList] = useState([]);
 

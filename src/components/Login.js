@@ -31,16 +31,16 @@ function Login() {
     axios
       /* 1er parámetro: url API. 2do: datos a mandar. */
       .post("http://challenge-react.alkemy.org", { email, password })
-      /* Retorna una promesa. Guardo el token en el localStorage */
+      /* Retorna una promesa. Guardo el token en el sessionStorage */
       .then((res) => {
         sweetAlert(<h3>Credenciales válidas</h3>);
         const tokenRecibido = res.data.token;
-        localStorage.setItem("token", tokenRecibido);
+        sessionStorage.setItem("token", tokenRecibido);
         /* redirecciono para mostrar el componente listado */
         navigate("/listado");
       });
   };
-  let token = localStorage.getItem("token");
+  let token = sessionStorage.getItem("token");
   return (
     <>
       {/* Renderizado condicional. Si tengo el token => redirige a listado */}
