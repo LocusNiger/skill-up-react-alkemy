@@ -33,6 +33,7 @@ export default function Listado() {
       {/* Si tengo el token entonces renderiza lo siguiente */}
 
       <div className="grid grid-cols-1 gap-6 box-border justify-items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
+        <h1 className="text-killBill text-2xl font-bold">Trending movies</h1>
         {/* mapeo el movielist y muestro las películas */}
         {/* le paso por props al componente movie todos los datos */}
         {moviesList.map((movie) => {
