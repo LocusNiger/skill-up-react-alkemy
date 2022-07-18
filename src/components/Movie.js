@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Movie(props) {
   /* formateando fecha */
   let mm = props.date.substring(5, 7);
@@ -14,6 +16,8 @@ export default function Movie(props) {
           <p>{props.title}</p>
           <p>{`${mm}/${aa}`}</p>
           <p>⭐ {props.rate.toFixed(1)}</p>
+          {/* Botón de detalle guarda en la ruta el id de c/película */}
+          <Link to={`/detail?movieId=${props.id}`}>View detail</Link>
         </div>
       </div>
     </>

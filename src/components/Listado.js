@@ -17,15 +17,15 @@ export default function Listado() {
     axios
       .get(endpoint)
       .then((response) => {
-        /* seteo en el array de películas */
+        /* seteo los datos en el array de películas */
         setMoviesList(response.data.results);
       })
+      /* manejo de errores */
       .catch((error) => {
         sweetAlert(<h2>Lo siento, estamos teniendo fallas. Intenta de nuevo más tarde</h2>);
       });
   }, [setMoviesList]);
 
-  console.log(moviesList);
   return (
     <>
       {/* renderizado condicional. Si no tengo token => redirección a /login */}
@@ -34,10 +34,12 @@ export default function Listado() {
 
       <div className="grid grid-cols-1 gap-6 box-border justify-items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
         {/* mapeo el movielist y muestro las películas */}
+        {/* le paso por props al componente movie todos los datos */}
         {moviesList.map((movie) => {
           return (
             <Movie
               key={movie.id}
+              id={movie.id}
               title={movie.title}
               img={movie.poster_path}
               date={movie.release_date}
