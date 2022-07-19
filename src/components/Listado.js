@@ -22,6 +22,7 @@ export default function Listado() {
       })
       /* manejo de errores */
       .catch((error) => {
+        console.log(error);
         sweetAlert(<h2>Lo siento, estamos teniendo fallas. Intenta de nuevo más tarde</h2>);
       });
   }, [setMoviesList]);

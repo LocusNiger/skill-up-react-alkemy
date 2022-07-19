@@ -1,10 +1,11 @@
 import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 import Login from "./components/Login";
 import Listado from "./components/Listado";
 import Detail from "./components/Detail";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
+import Results from "./components/Results";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/listado" element={<Listado />} />
         <Route path="/detail" element={<Detail />} />
+        <Route path="/results" element={<Results />} />
       </Routes>
       <Footer />
     </>
