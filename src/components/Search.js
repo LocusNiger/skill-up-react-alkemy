@@ -8,6 +8,8 @@ export default function Search() {
 
     if (keyword.length === 0) {
       sweetAlert(<h5>Ingresa una palabra para buscar</h5>);
+    } else if (keyword.length < 4) {
+      sweetAlert(<h5>Debes escribir más de 4 caracteres</h5>);
     }
   };
   return (
