@@ -1,33 +1,36 @@
 import sweetAlert from "@sweetalert/with-react";
-import { useNavigate } from "react-router-dom";
+import { createSearchParams, useNavigate } from "react-router-dom";
 
 export default function Search() {
-  let nav = useNavigate();
+  const navigate = useNavigate();
   let token = sessionStorage.getItem("token");
 
-  const handleSubmit = (e) => {
+  const handleSearch = (e) => {
     e.preventDefault();
     if (!token) {
       /* si no está logueado te manda a loguear */
       sweetAlert(<h3>Log in for search</h3>);
-      nav("/login");
+      navigate("/login");
     } else {
       const keyword = e.currentTarget.keyword.value.trim();
-
       if (keyword.length === 0) {
         sweetAlert(<h5>Ingresa una palabra para buscar</h5>);
       } else if (keyword.length < 1) {
         sweetAlert(<h5>Debes escribir más de 1 caracter</h5>);
       } else {
+        /* Si pasa las 2 validaciones:  */
+        const params = { keyword: keyword };
+        navigate({
+          pathname: "/results",
+          search: `?${createSearchParams(params)}`,
+        });
         e.currentTarget.keyword.value = "";
-        /* Si pasa las 2 validaciones, nos redirige a...  */
-        nav(`/results?keyword=${keyword}`);
       }
     }
   };
   return (
     <>
-      <form className="relative" onSubmit={handleSubmit}>
+      <form className="relative" onSubmit={handleSearch}>
         <label className="sr-only" htmlFor="search">
           {" "}
           Search{" "}

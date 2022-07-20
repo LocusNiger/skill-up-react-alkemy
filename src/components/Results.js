@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import sweetAlert from "@sweetalert/with-react";
 import Movie from "./Movie";
 
 export default function Results() {
-  let query = new URLSearchParams(window.location.search); /* Keyword viaja en la ruta */
-  let keyword = query.get("keyword"); /* saco el keyword del url */
+  const [params] = useSearchParams(); /* Keyword viaja en la ruta */
+  const keyword = params.get("keyword"); /* saco el keyword del url */
   const [results, setResults] = useState([]);
 
   useEffect(() => {
