@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Movie from "../components/Movie";
 
-export default function Favourites() {
+export default function Favorites() {
   const [favs, setFavs] = useState([]);
 
   useEffect(() => {
