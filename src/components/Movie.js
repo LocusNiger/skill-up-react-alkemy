@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
+import { AddOrRemoveFromFavs } from "../hooks/AddOrRemoveFromFavs";
 
 export default function Movie(props) {
   return (
     <>
       <div className="inline-block relative text-center items-center w-72 h-max box-border ">
-        <button className="w-10 h-10 bg-white rounded-full flex justify-center items-center absolute inset-4 text-lg">
+        <button
+          className="w-10 h-10 bg-white rounded-full flex justify-center items-center absolute inset-4 text-lg"
+          onClick={AddOrRemoveFromFavs}
+          data-movie-id={props.id}
+        >
           ❤️
         </button>
         <img
@@ -14,7 +19,7 @@ export default function Movie(props) {
         />
 
         <div className="absolute inset-x-0 bottom-0 backdrop-blur-sm h-32 mt-4 text-xl font-bold text-white  flex flex-col justify-evenly">
-          <p className="font-medium uppercase">{props.title}</p>
+          <h3 className="font-medium uppercase">{props.title}</h3>
           <p className="font-light">⭐ {props.rate.toFixed(1)}</p>
           {/* Botón de detalle guarda en la ruta el id de c/película */}
           <Link to={`/detail?movieId=${props.id}`} className="font-light">
