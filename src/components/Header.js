@@ -17,7 +17,7 @@ function Header() {
             </li>
             <li>
               <Link className="px-3 py-2 rounded-lg" to="/listado">
-                Listado
+                Trending movies
               </Link>
             </li>
           </ul>

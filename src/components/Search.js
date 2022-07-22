@@ -19,9 +19,9 @@ export default function Search() {
         sweetAlert(<h5>Debes escribir más de 1 caracter</h5>);
       } else {
         /* Si pasa las 2 validaciones:  */
-        const params = { keyword: keyword };
+        const params = { keyword: keyword }; /* guardo en params el keyword */
         navigate({
-          pathname: "/results",
+          pathname: "/results" /* redirijo a la ruta y le agrego los params */,
           search: `?${createSearchParams(params)}`,
         });
         e.currentTarget.keyword.value = "";
