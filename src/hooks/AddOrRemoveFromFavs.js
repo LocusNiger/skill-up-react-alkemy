@@ -1,3 +1,5 @@
+import sweetAlert from "@sweetalert/with-react";
+
 export function AddOrRemoveFromFavs(e) {
   const favMovies = localStorage.getItem("favs"); /* compruebo si hay favoritos guardados */
   let tempMoviesInFavs; /* array temporal para ir cargando los datos */
@@ -13,13 +15,11 @@ export function AddOrRemoveFromFavs(e) {
   const parent = btn.parentElement;
   const title = parent.querySelector("h3").innerText;
   const imgURL = parent.querySelector("img").getAttribute("src");
-  const rate = parent.querySelector("p").innerText;
   const id = btn.dataset.movieId;
   const movieData = {
     title,
     id,
     imgURL,
-    rate,
   };
 
   /* Buscando si la película ya se encuentra en favoritos  */
@@ -30,13 +30,13 @@ export function AddOrRemoveFromFavs(e) {
     /* Si es undefined -> no está => agregó la película al LS */
     tempMoviesInFavs.push(movieData);
     localStorage.setItem("favs", JSON.stringify(tempMoviesInFavs));
-    console.log(`Se agregó ${movieData.title} a favoritos`);
+    sweetAlert(<h3>`Se agregó {movieData.title} a favoritos`</h3>);
   } else {
     /* Si está la película => filtro el array y saco la que se repite */
     let moviesLeft = tempMoviesInFavs.filter((movie) => {
       return movie.id !== movieData.id;
     });
     localStorage.setItem("favs", JSON.stringify(moviesLeft));
-    console.log(`Se eliminó ${movieData.title} de favoritos`);
+    sweetAlert(<h3>`Se eliminó {movieData.title} de favoritos`</h3>);
   }
 }

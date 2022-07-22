@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Movie from "../components/Movie";
+import MovieInFavs from "../components/MovieInFavs";
 
 export default function Favorites() {
   const [favs, setFavs] = useState([]);
@@ -19,7 +19,7 @@ export default function Favorites() {
         {/* mapeo el movielist y muestro las películas */}
         {/* le paso por props al componente movie todos los datos */}
         {favs.map((movie) => {
-          return <Movie key={movie.id} id={movie.id} title={movie.title} img={movie.imgURL} rate={movie.rate} />;
+          return <MovieInFavs key={movie.id} id={movie.id} title={movie.title} img={movie.imgURL} />;
         })}
       </div>
     </>
