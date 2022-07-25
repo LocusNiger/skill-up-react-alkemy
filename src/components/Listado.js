@@ -5,7 +5,7 @@ import axios from "axios";
 import sweetAlert from "@sweetalert/with-react";
 
 /* Este componente solo debe mostrarse si estas logueado (con un token) */
-export default function Listado() {
+export default function Listado(props) {
   /* Busco si hay un token */
   let token = sessionStorage.getItem("token");
   /* Estado para manejar el array de peliculas. Array vacío */
@@ -46,6 +46,7 @@ export default function Listado() {
               img={movie.poster_path}
               date={movie.release_date}
               rate={movie.vote_average}
+              AddOrRemoveFromFavs={props.AddOrRemoveFromFavs}
             />
           );
         })}

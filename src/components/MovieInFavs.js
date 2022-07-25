@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { AddOrRemoveFromFavs } from "../hooks/AddOrRemoveFromFavs";
 
 export default function MovieInFavs(props) {
   return (
@@ -7,7 +6,7 @@ export default function MovieInFavs(props) {
       <div className="inline-block relative text-center items-center w-72 h-max box-border ">
         <button
           className="w-10 h-10 bg-white rounded-full flex justify-center items-center absolute inset-4 text-lg"
-          onClick={AddOrRemoveFromFavs}
+          onClick={props.AddOrRemoveFromFavs}
           data-movie-id={props.id}
         >
           ❤️

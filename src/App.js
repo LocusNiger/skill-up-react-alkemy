@@ -14,12 +14,12 @@ function App() {
   const favsInLocal = localStorage.getItem("favs"); /* compruebo si hay favoritos guardados */
   const [favs, setFavs] = useState([]);
   useEffect(() => {
-    const favsInLocal = localStorage.getItem("favs"); /* compruebo si hay favoritos guardados */
     if (favsInLocal !== null) {
+      /* si hay favs en LS, los guardo en una var y lo seteo */
       let favsArray = JSON.parse(favsInLocal);
       setFavs(favsArray);
     }
-  }, []);
+  }, [favsInLocal]);
 
   const AddOrRemoveFromFavs = (e) => {
     let tempMoviesInFavs; /* array temporal para ir cargando los datos */
@@ -70,7 +70,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/favorites" element={<Favorites AddOrRemoveFromFavs={AddOrRemoveFromFavs} favs={favs} />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/listado" element={<Listado />} />
+        <Route path="/listado" element={<Listado AddOrRemoveFromFavs={AddOrRemoveFromFavs} />} />
         <Route path="/detail" element={<Detail />} />
         <Route path="/results" element={<Results />} />
       </Routes>
