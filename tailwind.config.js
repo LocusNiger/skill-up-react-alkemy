@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        oswald: ["Oswald", "sans-serif"],
+        dmSans: ["DM Sans", "sans-serif"],
       },
       colors: {
         killBill: "#f8ba00",
