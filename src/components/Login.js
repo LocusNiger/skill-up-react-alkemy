@@ -37,7 +37,7 @@ function Login() {
         const tokenRecibido = res.data.token;
         sessionStorage.setItem("token", tokenRecibido);
         /* redirecciono para mostrar el componente listado */
-        navigate("/listado");
+        navigate("/");
       });
   };
   let token = sessionStorage.getItem("token");
