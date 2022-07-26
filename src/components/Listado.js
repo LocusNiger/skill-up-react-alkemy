@@ -40,7 +40,7 @@ export default function Listado(props) {
           </h1>
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-10 box-border justify-items-center sm:grid-cols-2 sm:gap-x-1 sm:gap-y-10 lg:grid-cols-4 bg-gray-900">
+      <div className="grid grid-cols-1 gap-10 box-border justify-items-center sm:grid-cols-2 sm:gap-x-0.5 sm:gap-y-8 lg:grid-cols-4">
         {/* mapeo el movielist y muestro las películas */}
         {/* le paso por props al componente movie todos los datos */}
         {moviesList.map((movie) => {

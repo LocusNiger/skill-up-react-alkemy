@@ -15,7 +15,7 @@ export default function Favorites(props) {
           </h1>
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-6 box-border justify-items-center md:grid-cols-3 md:gap-x-1 md:gap-y-10 lg:grid-cols-4 ">
+      <div className="grid grid-cols-1 gap-10 box-border justify-items-center sm:grid-cols-2 sm:gap-x-0.5 sm:gap-y-8 lg:grid-cols-4">
         {/* mapeo el array de favs y muestro las películas */}
         {/* le paso por props al componente movie todos los datos */}
         {props.favs.map((movie) => {

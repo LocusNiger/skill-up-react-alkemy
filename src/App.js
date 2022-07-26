@@ -79,8 +79,8 @@ function App() {
         <Route path="/favorites" element={<Favorites AddOrRemoveFromFavs={AddOrRemoveFromFavs} favs={favs} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/listado" element={<Listado AddOrRemoveFromFavs={AddOrRemoveFromFavs} />} />
-        <Route path="/detail" element={<Detail />} />
-        <Route path="/results" element={<Results />} />
+        <Route path="/detail" element={<Detail AddOrRemoveFromFavs={AddOrRemoveFromFavs} />} />
+        <Route path="/results" element={<Results AddOrRemoveFromFavs={AddOrRemoveFromFavs} />} />
       </Routes>
       <Footer />
     </>

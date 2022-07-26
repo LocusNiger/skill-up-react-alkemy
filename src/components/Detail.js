@@ -2,7 +2,7 @@ import { Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function Detail() {
+export default function Detail(props) {
   /* Busco si hay un token */
   let token = sessionStorage.getItem("token");
   /* El id de la película viaja en la ruta => en query guardo el queryString del url */
@@ -31,12 +31,19 @@ export default function Detail() {
       {movieDetail && (
         <>
           <div className="flex flex-col justify-center text-white md:flex-row md:p-8">
-            <div className="relative md:inline-block md:w-1/2">
+            <div className="relative md:inline-block md:w-1/2 lg:w-2/6">
               <img
                 className="w-full rounded-xl p-2 box-border"
                 src={`https://image.tmdb.org/t/p/w500/${movieDetail.poster_path}`}
                 alt={`${movieDetail.title} poster`}
               />
+              <button
+                className="w-10 h-10 bg-white rounded-full flex justify-center items-center absolute inset-4 text-lg sm:w-14 sm:h-14 sm:text-2xl"
+                onClick={props.AddOrRemoveFromFavs}
+                data-movie-id={movieDetail.id}
+              >
+                ❤️
+              </button>
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-b from-transparent to-black h-80 flex flex-col justify-end items-center p-2 box-border ">
                 <h1 className="font-bold text-4xl text-center mb-2.5">{movieDetail.title}</h1>
                 <div className="flex w-40 justify-around mb-2.5">

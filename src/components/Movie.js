@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 export default function Movie(props) {
   return (
     <>
-      <div className="inline-block relative text-center items-center w-72 h-max box-border ">
+      <div className="inline-block relative text-center items-center w-72 h-max box-border sm:w-11/12">
         <button
-          className="w-10 h-10 bg-white rounded-full flex justify-center items-center absolute inset-4 text-lg"
+          className="w-10 h-10 bg-white rounded-full flex justify-center items-center absolute inset-4 text-lg sm:w-14 sm:h-14 sm:text-2xl"
           onClick={props.AddOrRemoveFromFavs}
           data-movie-id={props.id}
         >
