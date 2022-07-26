@@ -16,7 +16,7 @@ export default function Movie(props) {
           <img
             className="object-contain rounded-xl"
             src={`https://image.tmdb.org/t/p/w500/${props.img}`}
-            alt={`${props.title} poster`}
+            alt={`${props.title}`}
           />
         </Link>
       </div>

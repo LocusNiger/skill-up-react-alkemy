@@ -32,7 +32,7 @@ function App() {
     /* Extraigo toda la info de la película */
     const btn = e.currentTarget;
     const parent = btn.parentElement;
-    const title = parent.querySelector("h3").innerText;
+    const title = parent.querySelector("img").getAttribute("alt");
     const imgURL = parent.querySelector("img").getAttribute("src");
     const id = btn.dataset.movieId;
     const movieData = {

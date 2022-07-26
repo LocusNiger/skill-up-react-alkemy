@@ -4,18 +4,20 @@ export default function HomeWithoutLogin() {
   return (
     <>
       <section className="text-white bg-gray-900">
-        <div className="max-w-screen-xl h-full px-4 py-32 mx-auto lg:h-screen lg:items-center lg:flex flex flex-col">
+        <div className="max-w-screen-xl h-full px-4 pt-12 mx-auto lg:items-center lg:flex">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-3xl font-extrabold text-transparent sm:text-5xl bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 h-14">
               Movies App
             </h1>
 
-            <p className="max-w-xl mx-auto mt-4 sm:leading-relaxed sm:text-xl">
-              Hello! This project was made for the "React Skill Up" of{" "}
+            <p className="max-w-xl mx-auto mt-4 text-xl sm:leading-relaxed sm:text-3xl">
+              Hello! This project was made for the <span className="text-blue-300">"React Skill Up I"</span> of{" "}
               <a className="text-blue-500" href="https://www.alkemy.org/" target="_blank" rel="noopener noreferrer">
-                Alkemy
+                Alkemy.
               </a>
-              . Login if you want to see more.
+            </p>
+            <p className="max-w-xl mx-auto mt-4 text-xl sm:leading-relaxed sm:text-3xl">
+              Login if you want to see more.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mt-8">
