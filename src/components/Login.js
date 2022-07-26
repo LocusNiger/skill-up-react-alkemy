@@ -45,14 +45,11 @@ function Login() {
     <>
       {/* Renderizado condicional. Si tengo el token => redirige a listado */}
       {token && <Navigate to="/listado" />}
-      <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
-        <div className="max-w-lg mx-auto text-center">
-          <h1 className="text-2xl font-bold sm:text-3xl">Login</h1>
-
-          <p className="mt-4 text-gray-500">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et libero nulla eaque error neque ipsa culpa autem,
-            at itaque nostrum!
-          </p>
+      <div className="max-w-screen-xl min-h-max px-4 py-16 mx-auto sm:px-6 lg:px-8 bg-gray-900">
+        <div className="max-w-lg mx-auto text-center h-14">
+          <h1 className="text-3xl font-extrabold text-transparent sm:text-5xl bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 h-14">
+            Login
+          </h1>
         </div>
 
         <form className="max-w-md mx-auto mt-8 mb-0 space-y-4" onSubmit={submitHandler}>
@@ -126,7 +123,7 @@ function Login() {
           <div className="flex justify-center">
             <button
               type="submit"
-              className="inline-block px-5 py-3 ml-3 text-sm font-medium text-white bg-blue-500 rounded-lg"
+              className="block w-full px-12 py-3 text-sm font-medium text-white bg-blue-600 border border-blue-600 rounded sm:w-auto active:text-opacity-75 hover:bg-transparent hover:text-white focus:outline-none focus:ring"
             >
               Sign in
             </button>

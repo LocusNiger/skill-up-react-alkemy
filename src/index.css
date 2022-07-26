@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-#root {
-  background-color: #121721;
+html {
+  font-family: "DM Sans", sans-serif;
+  background-color: #111827;
 }

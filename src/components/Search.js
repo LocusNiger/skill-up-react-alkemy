@@ -32,12 +32,11 @@ export default function Search() {
     <>
       <form className="relative" onSubmit={handleSearch}>
         <label className="sr-only" htmlFor="search">
-          {" "}
-          Search{" "}
+          Search
         </label>
 
         <input
-          className="w-full h-10 pl-4 pr-10 text-sm bg-white border-none rounded-full shadow-sm sm:w-56"
+          className="w-40 h-10 pl-4 pr-10 text-sm bg-white border-none rounded-full shadow-sm sm:w-56"
           id="search"
           type="search"
           name="keyword"

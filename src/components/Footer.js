@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="text-center bg-midnight">
+    <footer className="text-center bg-gray-900">
       <div className="max-w-screen-xl px-4 py-12 mx-auto sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto space-y-6">
           <div className="flex justify-center space-x-6">
@@ -49,27 +49,12 @@ function Footer() {
             </a>
           </div>
 
-          <nav className="relative flex flex-wrap justify-center gap-8 p-8 text-sm font-bold border-2 border-killBill text-killBill rounded-xl">
-            <a
-              className="hover:opacity-75"
-              href="http://linkedin.com/in/ivansanchez-frontend"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Linkedin
+          <p className="text-xs text-killBill font-medium ">
+            Created with 💖 by{" "}
+            <a href="https://locusniger.github.io/Portfolio" target="_blank" rel="noopener noreferrer">
+              Iván Sánchez
             </a>
-
-            <a
-              className="hover:opacity-75"
-              href="http://locusniger.github.io/Portfolio"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Portfolio
-            </a>
-          </nav>
-
-          <p className="text-xs text-killBill font-medium ">2022 Iván Sánchez</p>
+          </p>
         </div>
       </div>
     </footer>

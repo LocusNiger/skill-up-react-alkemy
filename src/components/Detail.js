@@ -31,16 +31,27 @@ export default function Detail() {
       {movieDetail && (
         <>
           <div className="flex flex-col justify-center text-white ">
-            <h1>{movieDetail.title}</h1>
-            <img
-              className="w-52"
-              src={`https://image.tmdb.org/t/p/w500/${movieDetail.poster_path}`}
-              alt={`${movieDetail.title} poster`}
-            />
-            <p>Overview: {movieDetail.overview}</p>
-            <p>Release date: {movieDetail.release_date}</p>
-            <p>⭐{movieDetail.vote_average}</p>
-            <p>
+            <div className="relative">
+              <img
+                className="min-w-full rounded-xl p-2 box-border "
+                src={`https://image.tmdb.org/t/p/w500/${movieDetail.poster_path}`}
+                alt={`${movieDetail.title} poster`}
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-b from-transparent to-black h-80 flex flex-col justify-end items-center">
+                <h1 className="font-bold text-4xl text-center mb-2.5">{movieDetail.title}</h1>
+                <div className="flex w-40 justify-around mb-2.5">
+                  <p className="font-bold p-2 bg-gray-600 bg-opacity-40 rounded-md">
+                    {movieDetail.release_date.substring(0, 4)}
+                  </p>
+                  <p className="font-bold p-2 bg-gray-600 bg-opacity-40 rounded-md">
+                    ⭐ {movieDetail.vote_average.toFixed(1)}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <p className="py-4 px-2 text-gray-200">{movieDetail.overview}</p>
+            <p className="text-gray-200">
               Genres:{" "}
               {movieDetail.genres.map((genre) => (
                 <li key={genre.id}>{genre.name}</li>

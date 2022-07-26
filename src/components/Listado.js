@@ -33,8 +33,10 @@ export default function Listado(props) {
       {!token && <Navigate to="/login" />}
       {/* Si tengo el token entonces renderiza lo siguiente */}
 
-      <div className="grid grid-cols-1 gap-6 box-border justify-items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
-        <h1 className="text-killBill text-3xl font-bold font-oswald uppercase">Trending movies</h1>
+      <div className="grid grid-cols-1 gap-10 box-border justify-items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 bg-gray-900">
+        <h1 className="text-3xl mt-6 font-extrabold text-transparent sm:text-5xl bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 h-14 font-dmSans">
+          Trending movies
+        </h1>
         {/* mapeo el movielist y muestro las películas */}
         {/* le paso por props al componente movie todos los datos */}
         {moviesList.map((movie) => {
