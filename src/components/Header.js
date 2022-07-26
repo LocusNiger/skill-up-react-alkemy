@@ -4,8 +4,8 @@ function Header() {
   return (
     <>
       <header className="bg-gray-900">
-        <nav className="flex items-center justify-between max-w-3xl p-4 mx-auto">
-          <ul className="flex items-center text-sm font-medium text-white">
+        <nav className="max-w-3xl p-4 mx-auto">
+          <ul className="flex justify-end text-base text-white">
             <li>
               <Link className="px-3 py-2 rounded-lg" to="/">
                 Home
