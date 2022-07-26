@@ -22,7 +22,7 @@ export default function HomeWithoutLogin() {
 
             <div className="flex flex-wrap justify-center gap-4 mt-8">
               <Link
-                className="block w-full px-12 py-3 text-sm font-medium text-white bg-blue-600 border border-blue-600 rounded sm:w-auto active:text-opacity-75 hover:bg-transparent hover:text-white focus:outline-none focus:ring"
+                className="block w-full px-12 py-3 text-sm font-medium text-white bg-blue-600 border border-blue-600 rounded sm:w-64 sm:text-lg active:text-opacity-75 hover:bg-transparent hover:text-white focus:outline-none focus:ring"
                 to="/login"
               >
                 Sign in

@@ -14,7 +14,7 @@ export default function Movie(props) {
         {/* Botón de detalle guarda en la ruta el id de c/película */}
         <Link to={`/detail?movieId=${props.id}`} className="font-light">
           <img
-            className="object-contain rounded-xl"
+            className="object-contain rounded-xl lg:w-64"
             src={`https://image.tmdb.org/t/p/w500/${props.img}`}
             alt={`${props.title}`}
           />

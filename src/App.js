@@ -50,7 +50,11 @@ function App() {
       tempMoviesInFavs.push(movieData);
       localStorage.setItem("favs", JSON.stringify(tempMoviesInFavs));
       setFavs(tempMoviesInFavs);
-      sweetAlert(<h3>Se agregó {movieData.title} a favoritos</h3>);
+      sweetAlert(
+        <h3>
+          <span className="font-bold">{movieData.title}</span> was added to favorites
+        </h3>
+      );
     } else {
       /* Si está la película => filtro el array y saco la que se repite */
       let moviesLeft = tempMoviesInFavs.filter((movie) => {
@@ -58,7 +62,11 @@ function App() {
       });
       localStorage.setItem("favs", JSON.stringify(moviesLeft));
       setFavs(moviesLeft);
-      sweetAlert(<h3>Se eliminó {movieData.title} de favoritos</h3>);
+      sweetAlert(
+        <h3>
+          <span className="font-bold">{movieData.title}</span> was removed from favorites
+        </h3>
+      );
     }
   };
 
