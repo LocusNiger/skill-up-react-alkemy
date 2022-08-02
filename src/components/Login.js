@@ -50,6 +50,9 @@ function Login() {
           <h1 className="text-3xl font-extrabold text-transparent sm:text-5xl bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 h-14">
             Login
           </h1>
+          <p className="text-xs bg-clip-text bg-gradient-to-r text-transparent from-green-300 to-blue-500 ">
+            username: challenge@alkemy.org - pw: react
+          </p>
         </div>
 
         <form className="max-w-md mx-auto mt-8 mb-0 space-y-4" onSubmit={submitHandler}>
