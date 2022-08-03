@@ -51,7 +51,7 @@ function Footer() {
 
           <p className="text-xs text-killBill font-medium ">
             Created with 💖 by{" "}
-            <a href="https://locusniger.github.io/Portfolio" target="_blank" rel="noopener noreferrer">
+            <a href="https://ivansanchez-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer">
               Iván Sánchez
             </a>
           </p>
