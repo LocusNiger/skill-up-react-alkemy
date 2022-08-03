@@ -30,7 +30,7 @@ function Login() {
     /* Petición a la API que retorna el token con librería AXIOS*/
     axios
       /* 1er parámetro: url API. 2do: datos a mandar. */
-      .post("http://challenge-react.alkemy.org", { email, password })
+      .post("https://challenge-react.alkemy.org", { email, password })
       /* Retorna una promesa. Guardo el token en el sessionStorage */
       .then((res) => {
         sweetAlert(<h3>Credenciales válidas</h3>);
